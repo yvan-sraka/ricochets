@@ -1,0 +1,8 @@
+#! /usr/bin/env nix-shell
+# -*- mode: shell-script; sh-shell: bash -*-
+#! nix-shell -p nix -i bash
+set -euo pipefail
+
+export NIX_PATH="nixpkgs=."
+nix-build '<nixpkgs/nixos>' -A vm \
+   -I nixos-config=./example-configuration.nix

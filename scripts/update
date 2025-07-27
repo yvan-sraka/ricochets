@@ -1,0 +1,39 @@
+#! /usr/bin/env nix-shell
+# -*- mode: shell-script; sh-shell: bash -*-
+#! nix-shell -p git nix npins rsync -i bash
+set -euo pipefail
+
+# This updates npins/sources.json, flake.lock, and hardware-list.txt, runs
+# checks, creates a tarball, and pushes it to a static server.
+#
+# n.b.: GitHub Actions are notoriously painful to work with; this script is
+# launched daily by stoemp.club self-hosted home server.
+#
+# If you want to test your changes before sending a patch, use --no-publish
+# (or just directly call ./scripts/checks)
+
+NO_PUBLISH=0
+if [[ "${1:-}" == "--no-publish" ]]; then
+  NO_PUBLISH=1
+fi
+
+npins update
+nix flake update --experimental-features 'flakes nix-command'
+
+./scripts/checks
+./scripts/hardware-list > ./hardware-list.tsv
+
+if git diff --quiet && git diff --cached --quiet; then
+  echo "No changes to commit"
+else
+  export GIT_SSH_COMMAND="ssh -i ${SSH_KEY_PATH:-$HOME/.ssh/id_ed25519} -o IdentitiesOnly=yes"
+  git add flake.lock npins/sources.json hardware-list.tsv
+  git -c user.signingkey="$GPG_KEY_ID" commit --no-verify -S -m "Bump lock files"
+  git push origin main
+fi
+
+git archive --format=tar.gz --output=main.tar.gz HEAD --prefix=ricochets/
+
+if [[ "$NO_PUBLISH" -eq 0 ]]; then
+  rsync -azP main.tar.gz "$TARGET"
+fi

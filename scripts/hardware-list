@@ -1,0 +1,27 @@
+#! /usr/bin/env nix-shell
+# -*- mode: python -*-
+#! nix-shell -i python3 -p "python3.withPackages (ps: with ps; [ requests markdown beautifulsoup4 ])"
+
+# This extracts (from the GitHub README of the project) the list of hardware
+# supported by <nixos-hardware> so the Ricochets installer can nicely ask
+# the user interactively to add it to their configuration.
+
+import requests
+import markdown
+from markdown.extensions.tables import TableExtension
+from bs4 import BeautifulSoup
+
+response = requests.get(
+    "https://raw.githubusercontent.com/NixOS/nixos-hardware/refs/heads/master/README.md"
+)
+response.raise_for_status()
+html_content = markdown.markdown(
+    response.text, extensions=[TableExtension()]
+)
+table = BeautifulSoup(html_content, "html.parser").find_all("table")[0]
+rows = [
+    [cell.text.strip() for cell in row.find_all("td")]
+    for row in table.find_all("tr")[1:]
+]
+for row in rows:
+    print(f"{row[0]}\t{row[1]}")

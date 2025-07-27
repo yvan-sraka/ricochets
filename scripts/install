@@ -1,0 +1,44 @@
+#! /usr/bin/env nix-shell
+# -*- mode: shell-script; sh-shell: bash -*-
+#! nix-shell -p gum -i bash
+set -euo pipefail
+
+echo "This script will update your system to use a custom '<nixpkgs/nixos>' channel, which will:
+- Enable some opinionated settings for desktop usage.
+- Enable auto-upgrade in the background.
+You should never have to edit '/etc/nixos/configuration.nix' by hand.
+Every 6 months, the channel maintainers bump it to the latest NixOS version.
+You may be prompted for your (sudo) password."
+
+read -r -p "Continue with installation? [y/N]: " confirm
+if [[ ! "$confirm" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    echo "Installation cancelled."
+    exit 1
+fi
+
+echo "Replacing the default <nixpkgs/nixos> channel with a managed one..."
+sudo nix-channel --remove nixos
+sudo nix-channel --add https://ricochets.stoemp.club/main.tar.gz nixos
+
+read -r -p "Would you like to enable hardware-specific configuration from nixos-hardware? [Y/n]: " hw_confirm
+if [[ "$hw_confirm" =~ ^([yY][eE][sS]|[yY]|"")$ ]]; then
+    models_list="$(awk -F'\t' '{print $1}' "$HARDWARE_LIST")"
+    selected_model=$(echo -e "$models_list\nMy computer is not in the list" | gum choose --header="Select your hardware model:")
+    if [[ "$selected_model" != "My computer is not in the list" ]]; then
+        import_path=$(awk -F"\t" -v model="$selected_model" '$1 == model {print $2}' "$HARDWARE_LIST")
+        echo "{...}: { imports = [ $import_path ]; }" | sudo tee /etc/nixos/nixos-hardware.nix > /dev/null
+        sudo nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
+    else
+        echo "Skipping nixos-hardware configuration."
+    fi
+else
+    echo "Skipping nixos-hardware configuration."
+fi
+
+sudo nix-channel --update
+echo "Rebuilding system. This may take a few minutes..."
+sudo nixos-rebuild switch
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+echo "Installation complete! Please reboot your
