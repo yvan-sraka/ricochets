@@ -1,4 +1,5 @@
 Acer Aspire 4810T	<nixos-hardware/acer/aspire/4810t>
+Acer Predator Helios 300 (PH315-51)	<nixos-hardware/acer/predator/helios/300/ph315-51/>
 Airis N990	<nixos-hardware/airis/n990>
 Apple iMac 12,2	<nixos-hardware/apple/imac/12-2>
 Apple iMac 14.2	<nixos-hardware/apple/imac/14-2>
@@ -76,6 +77,7 @@ Dell Latitude 7430	<nixos-hardware/dell/latitude/7430>
 Dell Latitude 7490	<nixos-hardware/dell/latitude/7490>
 Dell Latitude 9430	<nixos-hardware/dell/latitude/9430>
 Dell Latitude E7240	<nixos-hardware/dell/latitude/e7240>
+Dell Latitude E7440	<nixos-hardware/dell/latitude/e7440>
 Dell Optiplex 3050	<nixos-hardware/dell/optiplex/3050>
 Dell Poweredge R7515	<nixos-hardware/dell/poweredge/r7515>
 Dell Precision 3490, nvidia	<nixos-hardware/dell/precision/3490/nvidia>
