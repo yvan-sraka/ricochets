@@ -43,6 +43,7 @@ Asus ROG Zephyrus M16 GU603H	<nixos-hardware/asus/zephyrus/gu603h>
 Asus TUF FX504GD	<nixos-hardware/asus/fx504gd>
 Asus TUF FX506HM	<nixos-hardware/asus/fx506hm>
 Asus TUF FA506IC	<nixos-hardware/asus/fa506ic>
+Asus TUF FA506IC	<nixos-hardware/asus/fa506nc>
 Asus TUF FA507RM	<nixos-hardware/asus/fa507rm>
 Asus TUF FA507NV	<nixos-hardware/asus/fa507nv>
 Asus TUF FA706IC	<nixos-hardware/asus/fa706ic>
@@ -212,6 +213,7 @@ Lenovo ThinkPad P14s AMD Gen 6	<nixos-hardware/lenovo/thinkpad/p14s/amd/gen6>
 Lenovo ThinkPad P14s Intel Gen 2	<nixos-hardware/lenovo/thinkpad/p14s/intel/gen2>
 Lenovo ThinkPad P14s Intel Gen 3	<nixos-hardware/lenovo/thinkpad/p14s/intel/gen3>
 Lenovo ThinkPad P14s Intel Gen 5	<nixos-hardware/lenovo/thinkpad/p14s/intel/gen5>
+Lenovo ThinkPad P15v Intel Gen 3	<nixos-hardware/lenovo/thinkpad/p15v/intel/gen3>
 Lenovo ThinkPad P16s AMD Gen 1	<nixos-hardware/lenovo/thinkpad/p16s/amd/gen1>
 Lenovo ThinkPad P16s AMD Gen 2	<nixos-hardware/lenovo/thinkpad/p16s/amd/gen2>
 Lenovo ThinkPad P16s AMD Gen 4	<nixos-hardware/lenovo/thinkpad/p16s/amd/gen4>
@@ -301,6 +303,7 @@ MSI B550 TOMAHAWK	<nixos-hardware/msi/b550-tomahawk>
 MSI GS60 2QE	<nixos-hardware/msi/gs60>
 MSI GL62/CX62	<nixos-hardware/msi/gl62>
 MSI GL65 10SDR-492	<nixos-hardware/msi/gl65/10SDR-492>
+MSI Prestige 15 A10SC	<nixos-hardware/msi/prestige/15-a10sc>
 Malibal Aon S1	
 Microchip Icicle Kit	<nixos-hardware/microchip/icicle-kit>
 Microsoft Surface Go	<nixos-hardware/microsoft/surface/surface-go>
