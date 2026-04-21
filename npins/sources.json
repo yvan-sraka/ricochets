@@ -3,8 +3,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-25.11",
-      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.9418.c7f47036d3df/nixexprs.tar.xz",
-      "hash": "sha256-EVobw7mrC4S2+TuLll6DMAX3p3VTc+r4UmMeFRhOvB0="
+      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.9476.e07580dae397/nixexprs.tar.xz",
+      "hash": "sha256-ejqhruD099jJhSyBtD0SovoOmxj9yc7BcGDV0a94E/s="
     }
   },
   "version": 7
