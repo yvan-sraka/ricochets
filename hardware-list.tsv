@@ -158,6 +158,7 @@ HP Probook 460G11	<nixos-hardware/hp/probook/460g11>
 Huawei Matebook X Pro (2020)	<nixos-hardware/huawei/machc-wa>
 i.MX8QuadMax Multisensory Enablement Kit	<nixos-hardware/nxp/imx8qm-mek>
 Intel NUC 5i5RYB	<nixos-hardware/intel/nuc/5i5ryb>
+Intel NUC 7i3BNB	<nixos-hardware/intel/nuc/7i3bnb>
 Intel NUC 8i7BEH	<nixos-hardware/intel/nuc/8i7beh>
 Intel NUC 12WSHi7	<nixos-hardware/intel/nuc/12wshi7>
 Kobol Helios4	<nixos-hardware/kobol/helios4>
