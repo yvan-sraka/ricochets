@@ -351,6 +351,7 @@ Protectli VP4670	<nixos-hardware/protectli/vp4670>
 Purism Librem 13v3	<nixos-hardware/purism/librem/13v3>
 Purism Librem 15v3	<nixos-hardware/purism/librem/15v3>
 Purism Librem 5r4	<nixos-hardware/purism/librem/5r4>
+Radxa ROCK 3C	<nixos-hardware/radxa/rock-3c>
 Radxa ROCK 4C+	<nixos-hardware/radxa/rock-4c-plus>
 Radxa ROCK 5 Model B	<nixos-hardware/radxa/rock-5b>
 Radxa ROCK Pi 4	<nixos-hardware/radxa/rock-pi-4>
