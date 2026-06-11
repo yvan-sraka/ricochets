@@ -310,6 +310,7 @@ MSI GS60 2QE	<nixos-hardware/msi/gs60>
 MSI GL62/CX62	<nixos-hardware/msi/gl62>
 MSI GL65 10SDR-492	<nixos-hardware/msi/gl65/10SDR-492>
 MSI Prestige 15 A10SC	<nixos-hardware/msi/prestige/15-a10sc>
+MSI Z370 PC PRO	<nixos-hardware/msi/z370-pc-pro>
 Malibal Aon S1	
 Microchip Icicle Kit	<nixos-hardware/microchip/icicle-kit>
 Microsoft Surface Go	<nixos-hardware/microsoft/surface/surface-go>
@@ -382,6 +383,9 @@ TUXEDO Aura 15 - Gen1	<nixos-hardware/tuxedo/aura/15/gen1>
 TUXEDO InfinityBook Pro 14 - Gen7	<nixos-hardware/tuxedo/infinitybook/pro14/gen7>
 TUXEDO InfinityBook Pro 14 - Gen9 - AMD	<nixos-hardware/tuxedo/infinitybook/pro14/gen9/amd>
 TUXEDO InfinityBook Pro 14 - Gen9 - INTEL	<nixos-hardware/tuxedo/infinitybook/pro14/gen9/intel>
+TUXEDO InfinityBook Pro 14 - Gen10 - AMD	<nixos-hardware/tuxedo/infinitybook/pro14/gen10/amd>
+TUXEDO InfinityBook Pro 15 - Gen10 - AMD	<nixos-hardware/tuxedo/infinitybook/pro15/gen10/amd>
+TUXEDO InfinityBook Pro 15 - Gen10 - INTEL	<nixos-hardware/tuxedo/infinitybook/pro15/gen10/intel>
 TUXEDO Pulse 14 - Gen3	<nixos-hardware/tuxedo/pulse/14/gen3>
 TUXEDO Pulse 15 - Gen2	<nixos-hardware/tuxedo/pulse/15/gen2>
 Xiaomi Redmibook 15 Pro 2021	<nixos-hardware/xiaomi/redmibook/15-pro-2021>
