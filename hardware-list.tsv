@@ -306,6 +306,7 @@ Linglong Nova Studio	<nixos-hardware/linglong/nova-studio>
 MSI B550-A PRO	<nixos-hardware/msi/b550-a-pro>
 MSI B350 TOMAHAWK	<nixos-hardware/msi/b350-tomahawk>
 MSI B550 TOMAHAWK	<nixos-hardware/msi/b550-tomahawk>
+MSI GF63 Thin	<nixos-hardware/msi/gf63>
 MSI GS60 2QE	<nixos-hardware/msi/gs60>
 MSI GL62/CX62	<nixos-hardware/msi/gl62>
 MSI GL65 10SDR-492	<nixos-hardware/msi/gl65/10SDR-492>
