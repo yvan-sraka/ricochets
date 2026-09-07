@@ -2,9 +2,9 @@
   "pins": {
     "nixpkgs": {
       "type": "Url",
-      "url": "https://channels.nixos.org/nixos-25.11/nixexprs.tar.xz",
+      "url": "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz",
       "unpack": true,
-      "hash": "sha256-IWpaImuKa1YVOmnuPyyzbG6/Q6ZgKaOsP4sXmfTbkdQ="
+      "hash": "sha256-aVla+xR1lotA4iEMo6ltSr5oKVvWxBZ8Gc9KjbwxJq8="
     }
   },
   "version": 8

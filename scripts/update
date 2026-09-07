@@ -17,6 +17,9 @@ if [[ "${1:-}" == "--no-publish" ]]; then
   NO_PUBLISH=1
 fi
 
+# Upgrade first so format migrations and their generated loader are committed
+# alongside the updated pin data.
+npins upgrade
 npins update
 nix flake update --experimental-features 'flakes nix-command'
 
@@ -27,7 +30,7 @@ if git diff --quiet && git diff --cached --quiet; then
   echo "No changes to commit"
 else
   export GIT_SSH_COMMAND="ssh -i ${SSH_KEY_PATH:-$HOME/.ssh/id_ed25519} -o IdentitiesOnly=yes"
-  git add flake.lock npins/sources.json hardware-list.tsv
+  git add flake.lock npins/default.nix npins/sources.json hardware-list.tsv
   git -c user.signingkey="$GPG_KEY_ID" commit --no-verify -S -m "Bump lock files"
   git push origin main
 fi
