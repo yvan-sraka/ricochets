@@ -1,6 +1,6 @@
 #! /usr/bin/env nix-shell
 # -*- mode: shell-script; sh-shell: bash -*-
-#! nix-shell -p git nix npins rsync -i bash
+#! nix-shell -p git nix npins jq rsync -i bash
 set -euo pipefail
 
 # This updates npins/sources.json, flake.lock, and hardware-list.txt, runs
@@ -17,8 +17,18 @@ if [[ "${1:-}" == "--no-publish" ]]; then
   NO_PUBLISH=1
 fi
 
+npins upgrade
 npins update
 nix flake update --experimental-features 'flakes nix-command'
+nixpkgs_url="$(jq -er '.nodes.nixpkgs.locked.url' flake.lock)"
+nixpkgs_hash="$(jq -er '.nodes.nixpkgs.locked.narHash' flake.lock)"
+nixpkgs_pin="$(mktemp)"
+trap 'rm -f "$nixpkgs_pin"' EXIT
+jq --arg url "$nixpkgs_url" --arg hash "$nixpkgs_hash" '
+  .pins.nixpkgs = { type: "Url", url: $url, unpack: true, hash: $hash }
+' npins/sources.json > "$nixpkgs_pin"
+mv "$nixpkgs_pin" npins/sources.json
+trap - EXIT
 
 ./scripts/checks
 ./scripts/hardware-list > ./hardware-list.tsv
@@ -27,7 +37,7 @@ if git diff --quiet && git diff --cached --quiet; then
   echo "No changes to commit"
 else
   export GIT_SSH_COMMAND="ssh -i ${SSH_KEY_PATH:-$HOME/.ssh/id_ed25519} -o IdentitiesOnly=yes"
-  git add flake.lock npins/sources.json hardware-list.tsv
+  git add flake.lock npins/default.nix npins/sources.json hardware-list.tsv
   git -c user.signingkey="$GPG_KEY_ID" commit --no-verify -S -m "Bump lock files"
   git push origin main
 fi
