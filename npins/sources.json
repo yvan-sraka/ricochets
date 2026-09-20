@@ -2,9 +2,9 @@
   "pins": {
     "nixpkgs": {
       "type": "Url",
-      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.10057.cf9d2fb3e50f/nixexprs.tar.xz",
+      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.10304.6d663c0533ff/nixexprs.tar.xz",
       "unpack": true,
-      "hash": "sha256-egdV7mLwirrhbokzBuZ4j1XCjoD5ujwMO371/9z+PM4="
+      "hash": "sha256-lIL3uDaS4Q9Ks6klLrBlDr+XS71sbjMJFSipIp2yPjs="
     }
   },
   "version": 8
