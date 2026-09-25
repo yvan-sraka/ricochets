@@ -137,6 +137,7 @@ Fydetab Duo	<nixos-hardware/fydetab/duo>
 Gigabyte B550	<nixos-hardware/gigabyte/b550>
 Gigabyte B650	<nixos-hardware/gigabyte/b650>
 GMKtec NucBox G3 Plus	<nixos-hardware/gmktec/nucbox/g3-plus>
+GPD Duo	<nixos-hardware/gpd/duo>
 GPD MicroPC	<nixos-hardware/gpd/micropc>
 GPD P2 Max	<nixos-hardware/gpd/p2-max>
 GPD Pocket 3	<nixos-hardware/gpd/pocket-3>
