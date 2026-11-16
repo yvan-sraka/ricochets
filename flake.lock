@@ -24,7 +24,7 @@
         "narHash": "sha256-gMyd1bZoTbvrap9NEM2ZIy/7Qfhd54segpSkHPB2vfE=",
         "rev": "b349185bb79c7cf7ad8ea8c097931730bf473c71",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.14561.b349185bb79c/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.14561.b349185bb79c/nixexprs.tar.xz?lastModified=1794756927&rev=b349185bb79c7cf7ad8ea8c097931730bf473c71"
       },
       "original": {
         "type": "tarball",
